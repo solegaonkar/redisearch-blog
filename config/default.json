@@ -1,7 +1,7 @@
 {
   "redis": {
-    "url": "redis://redis-18631.c8.us-east-1-2.ec2.cloud.redislabs.com:18631",
-    "password": "HEVvo99xzKzlNE6GFigMuPCXsKWUmcZ7"
+    "url": "redis://redis-17144.c52.us-east-1-4.ec2.cloud.redislabs.com:17144",
+    "password": "hR1ehlluBctLrbbx9hYeIVeoPVpPSJEG"
   },
   "dataSource": "https://share.krazyminds.com/kagglerenaissancepoems.json"
 }
