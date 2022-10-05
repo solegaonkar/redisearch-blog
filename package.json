@@ -1,0 +1,21 @@
+{
+  "name": "redisblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bluebird": "^3.7.2",
+    "config": "^3.3.8",
+    "express": "^4.18.1",
+    "md5": "^2.3.0",
+    "nanoid": "^4.0.0",
+    "redis": "^4.3.1"
+  }
+}
