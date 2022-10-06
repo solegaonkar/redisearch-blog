@@ -7,7 +7,7 @@
  * Copyright (c) 2022 Vikas K Solegaonkar                                      *
  * Crystal Cloud Solutions (https://crystalcloudsolutions.com)                 *
  *                                                                             *
- * Last Modified: Wed Oct 05 2022                                              *
+ * Last Modified: Thu Oct 06 2022                                              *
  * Modified By: Vikas K Solegaonkar                                            *
  *                                                                             *
  * HISTORY:                                                                    *
@@ -60,6 +60,9 @@ const setup = async () => {
 
   /**
    * Create the inverted index that we will use to query the poems data
+   *
+   * FT.CREATE idx:poems ON HASH PREFIX 1 poem: SCHEMA content TEXT author TEXT title TEXT SORTABLE age TAG type TAG
+   *
    */
   await client.ft.create(
     "idx:poems",
@@ -67,7 +70,6 @@ const setup = async () => {
       content: redis.SchemaFieldTypes.TEXT,
       author: redis.SchemaFieldTypes.TEXT,
       title: { type: redis.SchemaFieldTypes.TEXT, sortable: true },
-      type: redis.SchemaFieldTypes.TAG,
       age: redis.SchemaFieldTypes.TAG,
       type: redis.SchemaFieldTypes.TAG,
     },
