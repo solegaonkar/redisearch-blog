@@ -117,30 +117,7 @@ const createApp = (client) => {
     client.ft.search("idx:poems", `%${req.params.text}%`).then((result) => res.send(result.documents));
   });
 
-  /**
-   * This API demonstrates the GROUPBY. It will group the results based on the field name specified.
-   */
-  app.get("/groupcounts/:field", function (req, res) {
-    client.ft
-      .aggregate("idx:poems", "*", {
-        STEPS: [
-          {
-            type: redis.AggregateSteps.GROUPBY,
-            properties: { property: req.params.field },
-            REDUCE: [
-              {
-                type: redis.AggregateGroupByReducers.COUNT,
-                property: req.params.field,
-                AS: `count-${req.params.field}`,
-              },
-            ],
-          },
-        ],
-      })
-      .then((result) => res.send(result.results))
-      .catch((e) => console.log(e));
-  });
-
+  console.log("Ready");
   app.listen(3000);
 };
 
